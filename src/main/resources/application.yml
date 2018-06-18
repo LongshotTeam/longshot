@@ -1,0 +1,7 @@
+spring:
+  data:
+    solr:
+      repositories:
+          enabled: true
+
+      host: http://localhost:8983/solr/
