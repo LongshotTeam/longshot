@@ -12,21 +12,21 @@
          {
             "skuId": "sku1001",
             "pName": "Nandini Curd",
-            "cin": "1001",
-            "price": 19,
+            "cin": "1002",
+            "price": 20,
             "storeId": "dn211za",
-            "score": "2.1",
-            "rank": "1"
+            "score": "2.2",
+            "rank": "2"
         },
         
         {
             "skuId": "sku1001",
             "pName": "Nandini Curd",
             "cin": "1001",
-            "price": 19,
+            "price": 21,
             "storeId": "dn211za",
-            "score": "2.1",
-            "rank": "1"
+            "score": "2.3",
+            "rank": "3"
         }
         
     ]

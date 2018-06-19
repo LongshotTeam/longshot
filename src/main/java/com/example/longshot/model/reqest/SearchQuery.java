@@ -1,23 +1,54 @@
 package com.example.longshot.model.reqest;
 
-import java.util.List;
-
 public class SearchQuery {
 
-    private String queryText;
-    private List<ReqQuery> relAlgo;
+    private String responsetype;
+    private String keyword;
+    private String storeid;
+    private String productperpage;
+    private int pagenum;
     
-    public String getQueryText() {
-        return queryText;
+    //private List<String> relAlgo;
+    
+    public int getPagenum() {
+        return pagenum;
     }
-    public void setQueryText(String queryText) {
-        this.queryText = queryText;
+    public void setPagenum(int pagenum) {
+        this.pagenum = pagenum;
     }
-    public List<ReqQuery> getRelAlgo() {
+    public String getResponsetype() {
+        return responsetype;
+    }
+    public void setResponsetype(String responsetype) {
+        this.responsetype = responsetype;
+    }
+    public String getKeyword() {
+        return keyword;
+    }
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+    public String getStoreid() {
+        return storeid;
+    }
+    public void setStoreid(String storeid) {
+        this.storeid = storeid;
+    }
+    public String getProductperpage() {
+        return productperpage;
+    }
+    public void setProductperpage(String productperpage) {
+        this.productperpage = productperpage;
+    }
+    
+    
+    /*public List<String> getRelAlgo() {
         return relAlgo;
     }
-    public void setRelAlgo(List<ReqQuery> relAlgo) {
+    public void setRelAlgo(List<String> relAlgo) {
         this.relAlgo = relAlgo;
-    }
+    }*/
+    
+   
     
 }

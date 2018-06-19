@@ -2,12 +2,15 @@ package com.example.longshot.model.reqest;
 
 public class ReqQuery {
 
-    private String algo;
+    private String searchTerm;
 
-    public String getAlgo() {
-        return algo;
+    public String getSearchTerm() {
+        return searchTerm;
     }
-    public void setAlgo(String algo) {
-        this.algo = algo;
+
+    public void setSearchTerm(String searchTerm) {
+        this.searchTerm = searchTerm;
     }
+
+    
 }
