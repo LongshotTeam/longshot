@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 import com.example.longshot.endeca.search.dto.SearchServiceDTO;
 import com.example.longshot.model.reqest.ReqQuery;
@@ -18,7 +20,8 @@ import com.example.longshot.model.response.CasesResponse;
 @RequestMapping("/longshot/api")
 @RestController
 public interface Longshot {
-
+	
+	@CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/rank")
     public String rank();
 
