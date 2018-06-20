@@ -48,7 +48,8 @@ public interface Longshot {
 
     @PostMapping("/cases/queries")
     public AddQueryReponse addQuery(@RequestBody ReqQuery query);
-
+   
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/browse/search")
     public SearchServiceDTO searchQuery(@RequestBody SearchQuery query);
 
