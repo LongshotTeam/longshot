@@ -3,80 +3,23 @@ package com.example.longshot.biz;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.List;
 import java.util.Collection;
+import com.example.longshot.biz.Item;
+import com.example.longshot.biz.Judgment;
 
 
 public class Evaluator {
+	
+    @Autowired
+    private Item item;
 
-	  public static class Item {
-		/**
-		 * Constructs a new Document object.
-		 *
-		 * @param documentNumber
-		 *            The document identifier.
-		 * @param rank
-		 *            The rank of the document in a retrieved ranked list.
-		 * @param score
-		 *            The score given to this document by the retrieval system.
-		 */
+    @Autowired
+     private Judgment judgment;
 
-		public Item(String itemNumber, int rank, double score) {
-			this.itemNumber = itemNumber;
-			this.rank = rank;
-			this.score = score;
-		}
-
-		/**
-		 * Constructs a new Document object.
-		 *
-		 * @param documentNumber
-		 *            The document identifier.
-		 */
-
-		public Item(String itemNumber) {
-			this.itemNumber = itemNumber;
-			this.rank = Integer.MAX_VALUE;
-			this.score = Double.NEGATIVE_INFINITY;
-		}
-
-		/** The rank of the document in a retrieved ranked list. */
-		public int rank;
-		/** The document identifier. */
-		public String itemNumber;
-		/** The score given to this document by the retrieval system. */
-		public double score;
-	}
-
-	/**
-	 * This class represents a relevance judgment of a particular document for a
-	 * specific query.
-	 */
-
-	 public static class Judgment {
-		/**
-		 * Constructs a new Judgment instance.
-		 *
-		 * @param documentNumber
-		 *            The document identifier.
-		 * @param judgment
-		 *            The relevance judgment for this document, where positive
-		 *            values mean relevant, and zero means not relevant.
-		 */
-		public Judgment(String itemNumber, int judgment) {
-			this.itemNumber = itemNumber;
-			this.judgment = judgment;
-		}
-
-		/** The document identifier. */
-		public String itemNumber;
-		/**
-		 * The relevance judgment for this document, where positive values mean
-		 * relevant, and zero means not relevant.
-		 */
-		public int judgment;
-	}
-	 
 	 private String _queryName;
 	 private ArrayList<Item> _retrieved;
 	 private HashMap<String, Judgment> _judgments;
@@ -92,7 +35,6 @@ public class Evaluator {
 	public Evaluator( String queryName, List<Item> retrieved, Collection<Judgment> judgments ) {
 		         _queryName = queryName;
 		         _retrieved = new ArrayList<Item>( retrieved );
-		         
 		         _buildJudgments( judgments );
 		         
 	}
