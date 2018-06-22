@@ -49,7 +49,7 @@ public class JSONReader {
         SearchServiceDTO searchRes = null;
 
         //Default (No re-Reank)
-        if (query.getResponsetype() == null) {
+        if (query.getResponsetype() == null || query.getResponsetype().equals("")) {
             if (query.getKeyword().equalsIgnoreCase("milk"))
                 searchRes = objectMapper.readValue(new File("C:/app/Longshot1/json/milk_Default.json"),
                         SearchServiceDTO.class);
