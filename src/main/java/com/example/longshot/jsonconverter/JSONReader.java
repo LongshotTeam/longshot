@@ -26,9 +26,9 @@ public class JSONReader {
         if (algo.equalsIgnoreCase("algo1"))
             searchRes = objectMapper.readValue(new File("/resources/json/product1.json"), SearchResult.class);
         else if (algo.equalsIgnoreCase("algo2"))
-            searchRes = objectMapper.readValue(new File("/resources/json/json/product2.json"), SearchResult.class);
+            searchRes = objectMapper.readValue(new File("/resources/json/product2.json"), SearchResult.class);
         else
-            searchRes = objectMapper.readValue(new File("/resources/json/json/product3.json"), SearchResult.class);
+            searchRes = objectMapper.readValue(new File("/resources/json/product3.json"), SearchResult.class);
         return searchRes;
     }
 
