@@ -1,0 +1,18 @@
+{
+    "query": {
+        "arrangedAt": 0,
+        "arrangedNext": 512409557,
+        "deleted": null,
+        "queryId": 0,
+        "query_text": "query_text",
+        "scorerEnbl": null,
+        "scorerId": null,
+        "threshold": null,
+        "thresholdEnabled": null,
+        "options": null
+    },
+    "displayOrder": [
+        1001,
+        1002
+    ]
+}
