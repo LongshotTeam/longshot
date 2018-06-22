@@ -48,8 +48,18 @@ public class SearchServiceDTO {
     private String useKeywordAsIcon;
     
     private String algoName;
+    
+    private String relevance;
 
-    public String getAlgoName() {
+    public String getRelevance() {
+		return relevance;
+	}
+
+	public void setRelevance(String relevance) {
+		this.relevance = relevance;
+	}
+
+	public String getAlgoName() {
         return algoName;
     }
 
