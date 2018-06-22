@@ -21,7 +21,7 @@ import com.example.longshot.model.response.CasesResponse;
 @RestController
 public interface Longshot {
 	
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin
     @GetMapping("/rank")
     public String rank();
 
@@ -49,7 +49,7 @@ public interface Longshot {
     @PostMapping("/cases/queries")
     public AddQueryReponse addQuery(@RequestBody ReqQuery query);
    
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin
     @PostMapping("/browse/search")
     public SearchServiceDTO searchQuery(@RequestBody SearchQuery query);
 
