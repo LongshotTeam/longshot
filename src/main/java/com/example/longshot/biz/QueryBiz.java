@@ -18,7 +18,7 @@ public class QueryBiz {
 
     @Autowired
     public JSONReader jsonReader;
-    
+
     @Autowired
     public EndecaSearchService endecaSearchService;
 
@@ -54,22 +54,43 @@ public class QueryBiz {
     public SearchServiceDTO searchQuery(SearchQuery query) {
 
         SearchServiceDTO queryResponse = new SearchServiceDTO();
-        //queryResponse.setStatus(HttpStatus.OK.getReasonPhrase());
-        if (query != null && query.getResponsetype()!=null) {
-          try {
-            return endecaSearchService.getResult(query.getResponsetype(), query.getKeyword(), 
-                            query.getStoreid(), query.getProductperpage(), query.getPagenum());
-                   // return jsonReader.readJsonWithObjectMapper(query.getQueryText());
-          }catch (Exception exe) {
-              exe.printStackTrace();
-          }
-        } else {
-            return endecaSearchService.getResult(null, query.getKeyword(), 
-                    query.getStoreid(), query.getProductperpage(), query.getPagenum());
-           // return jsonReader.readJsonWithObjectMapper(query.getQueryText());
+        // queryResponse.setStatus(HttpStatus.OK.getReasonPhrase());
+        if (query != null && query.getResponsetype() != null) {
+            try {
+                return endecaSearchService.getResult(query.getResponsetype(), query.getKeyword(), query.getStoreid(),
+                        query.getProductperpage(), query.getPagenum());
+                // return
+                // jsonReader.readJsonWithObjectMapper(query.getQueryText());
+            }
+            catch (Exception exe) {
+                exe.printStackTrace();
+            }
         }
-       
+        else {
+            return endecaSearchService.getResult(null, query.getKeyword(), query.getStoreid(),
+                    query.getProductperpage(), query.getPagenum());
+            // return jsonReader.readJsonWithObjectMapper(query.getQueryText());
+        }
+
         return queryResponse;
+    }
+
+    /**
+     * Return solr search result
+     * 
+     * @param query
+     * @return
+     */
+    public SearchServiceDTO searchQueryDemo(SearchQuery query) {
+        SearchServiceDTO searchDto = null;
+        
+        try {
+            return jsonReader.readJsonWithObjectMapperDemo(query);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return searchDto;
     }
 
 }

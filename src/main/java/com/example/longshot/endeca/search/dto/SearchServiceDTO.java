@@ -46,6 +46,16 @@ public class SearchServiceDTO {
     private String mediaContent;
 
     private String useKeywordAsIcon;
+    
+    private String algoName;
+
+    public String getAlgoName() {
+        return algoName;
+    }
+
+    public void setAlgoName(String algoName) {
+        this.algoName = algoName;
+    }
 
     public void setPrefetch(String prefetch) {
         this.prefetch = prefetch;

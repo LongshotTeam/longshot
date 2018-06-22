@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.longshot.biz.CasesBiz;
 import com.example.longshot.biz.QueryBiz;
+import com.example.longshot.configs.SolrClientConfigs;
 import com.example.longshot.endeca.search.dto.SearchServiceDTO;
 import com.example.longshot.model.reqest.ReqQuery;
 import com.example.longshot.model.reqest.SearchQuery;
@@ -21,9 +22,20 @@ public class LongShotController implements Longshot {
 
     @Autowired
     private QueryBiz queryBiz;
+    
+    @Autowired
+    private SolrClientConfigs solrClient;
 
     @Override
     public String rank() {
+        
+        try {
+            solrClient.solrConfig();
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         return "Welcome to LongShot team";
     }
 
@@ -72,4 +84,8 @@ public class LongShotController implements Longshot {
         return queryBiz.searchQuery(query);
     }
 
+    @Override
+    public SearchServiceDTO searchQueryDemo(@RequestBody SearchQuery query) {
+        return queryBiz.searchQueryDemo(query);
+    }
 }

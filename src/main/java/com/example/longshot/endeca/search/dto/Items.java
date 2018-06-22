@@ -1,8 +1,16 @@
 package com.example.longshot.endeca.search.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
 public class Items
 {
     private String shelfId;
+    
+    private float score;
+
+    private float rank;
 
     private String shelfName;
 
@@ -321,5 +329,18 @@ public class Items
     }
     public String getPricePerUOM(){
         return this.pricePerUOM;
+    }
+    
+    public float getScore() {
+        return score;
+    }
+    public void setScore(float score) {
+        this.score = score;
+    }
+    public float getRank() {
+        return rank;
+    }
+    public void setRank(float rank) {
+        this.rank = rank;
     }
 }
