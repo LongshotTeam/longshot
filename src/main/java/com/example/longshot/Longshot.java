@@ -52,5 +52,8 @@ public interface Longshot {
     @CrossOrigin
     @PostMapping("/browse/search")
     public SearchServiceDTO searchQuery(@RequestBody SearchQuery query);
+    
+    @PostMapping("/v1/browse/search")
+    public SearchServiceDTO searchQueryDemo(@RequestBody SearchQuery query);
 
 }
